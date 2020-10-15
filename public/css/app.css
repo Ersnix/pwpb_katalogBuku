@@ -1,0 +1,318 @@
+*{
+    margin:0;
+    padding: 0;
+    font-family: Lucida Calligraphy;
+}
+.body{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #131419;
+}
+.loghed{
+    width: 100%;  
+}
+.regis{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #131419;
+}
+.inputr{
+    text-align: left;
+    display: flex;
+}
+.garis{
+    height: 250px;
+    margin:60px 30px;    
+    border: 1px solid rgba(255,255,255,0.1);
+}
+form{
+    position: relative;
+    display: block;
+    float: left;
+    padding: 40px 40px 60px;
+    background: #131419;
+    text-align: center;
+    box-shadow: -5px -5px 10px rgba(255,255,255,0.05),
+                5px 5px 15px rgba(0,0,0,0.5);
+}
+form .tit{
+    color: #43BD05;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+form .input{
+    text-align: left;
+    margin-top: 40px;
+}
+.box{
+    margin-top: 20px;
+}
+label{
+    display: block;
+    color: #868686;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+.box input{
+    width: 300px;
+    height: 50px;
+    background: #131419;
+    border:none;
+    outline: none;
+    border-radius: 40px;
+    padding: 1px 15px;
+    font-size: 18px;
+    color: #03a9f4;
+    box-shadow: inset -2px -2px 6px rgba(255,255,255,0.1),
+                inset 2px 2px 6px rgba(0,0,0,0.8);
+        }
+.box textarea{
+    width: 300px;
+    height: 90px;
+    background: #131419;
+    border:none;
+    outline: none;
+    border-radius: 25px;
+    padding: 1px 15px;
+    font-size: 18px;
+    color: #03a9f4;
+    box-shadow: inset -2px -2px 6px rgba(255,255,255,0.1),
+                inset 2px 2px 6px rgba(0,0,0,0.8);
+}
+select{
+    width: 94%;
+    height: 50px;
+    background: #131419;
+    border:none;
+    outline: none;
+    padding: 1px 15px;
+    font-size: 18px;
+    color: #03a9f4;
+    box-shadow: -1px -1px 4px rgba(255,255,255,0.1),
+                2px 2px 6px rgba(0,0,0,0.8);
+    cursor: pointer;
+}
+input[name="password"]::placeholder{
+    font-size: 22px;
+    letter-spacing: 4px;
+}
+input[type="Password"]::placeholder{
+    font-size: 22px;
+    letter-spacing: 4px;
+}        
+.box .submit{
+    width: 330px;
+    margin-top: 30px;
+    box-shadow: -2px -2px 6px rgba(255,255,255,0.1),
+                2px 2px 6px rgba(0,0,0,0.8);
+    cursor: pointer;
+}
+.box .submitr{
+    width: 330px;
+    margin-top: 70px;
+    box-shadow: -2px -2px 6px rgba(255,255,255,0.1),
+                2px 2px 6px rgba(0,0,0,0.8);
+    cursor: pointer;
+}
+button[type="submit"]:active{
+    width: 96%;
+    margin-top: 20px;
+    box-shadow:inset  -2px -2px 6px rgba(255,255,255,0.1),
+                inset 2px 2px 6px rgba(0,0,0,0.8);
+}
+p{
+    margin-top: 30px;
+    font-size: 14px;
+    color: #868686;
+}
+p a{
+    color: #43BD05;
+}
+.box .a{
+    color: #03a9f4;
+    position: absolute;
+    right: 16px;
+    top: 240px;
+}
+.box .b{
+    color: #03a9f4;
+    position: absolute;
+    right: 16px;
+    top: 260px;
+}
+.logout{
+    color: #ff0047;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 1px solid #ff0047;
+    float: right;
+}
+.judul{
+    position: absolute;
+    top: 100px;
+    left: 42%;
+    color: #131419;
+}
+.judul h1{
+    font-size: 120px;
+    text-shadow: -5px -5px 10px rgba(255,255,255,0.05),
+                -5px -5px 10px rgba(255,255,255,0.05),
+                5px 5px 15px rgba(0,0,0,0.5);
+}
+.background{
+    background: #131419;
+}
+.header{
+    margin: 5px 5px;
+    width: 97.4%;
+    box-shadow: -2px -2px 6px rgba(255,255,255,0.1),
+                     2px 2px 6px rgba(0,0,0,0.8);
+    padding: 10px 10px 10px 10px;
+}
+.header h1{
+    color: #03a9f4;
+    padding: 10px;
+    margin-left: 40px;
+}
+.home_admin{
+    display: flex;
+    justify-content: center;
+    margin-top: 16%;
+    font-size: 40px;
+    text-decoration: underline;
+    color: #03a9f4;
+}
+.remember{
+    display: flex;
+    float: right;
+    padding-right: 20px;
+    margin:0px;  
+}
+.remember input{
+    margin-right: 10px;
+    width: 15px;
+    height: 25px;
+    background: red;
+    border:none;
+    outline: none;
+    border-radius: 40px;
+    padding: 1px 15px;
+    font-size: 18px;
+    color: red;
+}
+
+
+
+
+.sidebar{
+  position: fixed;
+  top: 7px;
+  width: 280px;
+  height: 100%;
+  left: -280px;
+  transition: .5s;
+  box-shadow: -2px -2px 6px rgba(255,255,255,0.1),
+                     2px 2px 6px rgba(0,0,0,0.8);
+}
+.sidebar .nama_header{
+  line-height: 80px;
+  color: white;
+  box-shadow: -2px -2px 6px rgba(255,255,255,0.1),
+                     2px 2px 6px rgba(0,0,0,0.8);
+}
+.sidebar .nama_header h1{
+  font-size: 30px;
+  margin-left: 20px;
+  color: #03a9f4;
+}
+.sidebar ul li a{
+  font-size: 20px;
+  color: white;
+  line-height: 50px;
+  transition: .5s;
+  display: block;
+  margin-left: 30px;
+  margin-top: 30px;
+  text-decoration: none;
+}
+.sidebar ul li a i{
+  margin-right: 10px;
+}
+.sidebar ul li a:hover{
+  margin-left: 50px;
+  color: #BDC3C7;
+}
+
+.sidebar ul li {
+  margin-left: 5px;
+  list-style: none;
+  border-bottom: 1px solid white;
+  width: 90%;
+}
+#check{
+  display: none;
+}
+
+label #open{
+    position: absolute;
+    top: 25px;
+    left: 20px;
+    font-size: 40px;
+    cursor: pointer;
+    transition: .5s;
+    color: white;
+}
+
+label #close{
+    position: absolute;
+    top: 30px;
+    left: -200px;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1;
+    transition: .5s;
+    color: white;
+}
+#check:checked ~ .sidebar{
+  left: 0;
+}
+#check:checked ~ label #close{
+  left: 240px;
+}
+#check:checked ~ label #open{
+  left: -200px;
+}
+.section{
+  transition: .5s;
+}
+#check:checked ~ .section{
+  margin-left: 280px;
+}
+
+
+
+
+.tbvBuku{
+    margin: auto;
+    color: #BDC3C7;
+    box-shadow: -2px -2px 6px rgba(255,255,255,0.1),
+                     2px 2px 6px rgba(0,0,0,0.8);
+
+}
+.tbvBuku td{
+    border-bottom: 1px solid #03a9f4;
+    padding: 20px;
+}
+.sampulBuku{
+        border: 7px groove #03a9f4;
+}
+.tbvBuku a{
+    color: #43BD05;
+}
