@@ -31,7 +31,7 @@
     margin:60px 30px;    
     border: 1px solid rgba(255,255,255,0.1);
 }
-form{
+.form{
     position: relative;
     display: block;
     float: left;
@@ -41,13 +41,13 @@ form{
     box-shadow: -5px -5px 10px rgba(255,255,255,0.05),
                 5px 5px 15px rgba(0,0,0,0.5);
 }
-form .tit{
+.form .tit{
     color: #43BD05;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 4px;
 }
-form .input{
+.form .input{
     text-align: left;
     margin-top: 40px;
 }
@@ -154,6 +154,11 @@ p a{
     border: 1px solid #ff0047;
     float: right;
 }
+.logout:hover{
+    background: #ff0047;
+    transition: .6s;
+    color: #131419;
+}
 .judul{
     position: absolute;
     top: 100px;
@@ -214,6 +219,8 @@ p a{
 .sidebar{
   position: fixed;
   top: 7px;
+  z-index: 1;
+  background: #131419;
   width: 280px;
   height: 100%;
   left: -280px;
@@ -284,7 +291,9 @@ label #close{
   left: 0;
 }
 #check:checked ~ label #close{
-  left: 240px;
+    z-index: 2;
+    position: fixed;
+    left: 240px;
 }
 #check:checked ~ label #open{
   left: -200px;
@@ -292,22 +301,38 @@ label #close{
 .section{
   transition: .5s;
 }
-#check:checked ~ .section{
-  margin-left: 280px;
-}
 
 
 
 
-.tbvBuku{
+
+/*.tbvBuku{
     margin: auto;
+    width: 81%;
+    text-align: center;
+    padding: 30px;
     color: #BDC3C7;
     box-shadow: -2px -2px 6px rgba(255,255,255,0.1),
                      2px 2px 6px rgba(0,0,0,0.8);
 
 }
-.tbvBuku td{
+.tbvBuku table{
+    width: 100%;
+}
+.tbvBuku h1{
+    text-decoration: underline;
+}
+.judul_halaman_pemilik{
+    font-family: "Lucida Calligraphy";
+}
+.tbvBuku th{
+    padding: 20px;
     border-bottom: 1px solid #03a9f4;
+}
+.tbvBuku td{
+    text-align: center;
+    margin: 0;
+    border: 1px solid #03a9f4;
     padding: 20px;
 }
 .sampulBuku{
@@ -315,4 +340,245 @@ label #close{
 }
 .tbvBuku a{
     color: #43BD05;
+}*/
+
+.judul_halaman_pemilik{
+    font-family: "Lucida Calligraphy";
+}
+
+
+.tbvBuku{
+    margin: 30px auto;
+    width: 81%;
+    text-align: center;
+    padding: 30px;
+    color: #BDC3C7;
+    box-shadow: -2px -2px 6px rgba(255,255,255,0.1),
+                     2px 2px 6px rgba(0,0,0,0.8);
+}
+.tbvBuku h1{
+    margin-bottom: 40px;
+    text-decoration: underline;
+}
+.tbvBuku .sampulBuku{
+        
+}
+.tbvBuku a{
+    padding: 10px 30px;
+    text-decoration: none;
+    color: #43BD05;
+    margin-bottom: 30px;
+    box-shadow: -2px -2px 6px rgba(255,255,255,0.1),
+                     2px 2px 6px rgba(0,0,0,0.8);
+}
+.tbvBuku .boxBuku h3{
+    margin-top: 25px;
+    margin-bottom: 20px;
+    color: #43BD05;
+}
+.tbvBuku .boxBuku a{
+    padding: 10px 70px;
+    margin:10px;
+    text-decoration: none;
+    color: yellow;
+    box-shadow: -2px -2px 6px rgba(255,255,255,0.1),
+                     2px 2px 6px rgba(0,0,0,0.8);
+}
+.tbvBuku a:hover{
+    text-decoration: underline;
+}
+
+.tbvBuku .daftarBuku{
+    margin-top: 30px;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.tbvBuku .boxBuku{
+    box-shadow: -2px -2px 6px rgba(255,255,255,0.1),
+                     2px 2px 6px rgba(0,0,0,0.8);
+    text-align: left;
+    width: 44%;
+    display: block;
+    position: relative;
+    padding: 20px;
+    margin: 10px;
+}
+.tbvBuku .boxBuku .flex{
+    display: flex;
+}
+.tbvBuku .boxBuku .data{
+    margin: 10px;
+}
+.tbvBuku .boxBuku .data div {
+    margin-bottom: 10px;
+}
+.tbvBuku .boxBuku   .deletebuku{
+    color: #Ff0047;
+}
+.tbvBuku .boxBuku  .desk{
+    height: 150px;
+    display: block;
+    position:relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.boxBuku  .menutamb{
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 0;
+}
+.boxBuku  .menutamb .dic, .boxBuku  .menutamb .rec{
+    display: flex;
+}
+.boxBuku .menutamb .stardic{
+     width: 0;
+      height: 0;
+      border-bottom: 26px solid red;
+      border-left: 26px solid transparent;
+}
+.boxBuku  .menutamb .txt{
+    padding: 3px;
+    width: 80px;
+    height: 20px;
+    background: red;
+}
+.boxBuku  .menutamb .enddic{
+     width: 0;
+      height: 0;
+      border-top: 26px solid red;
+      border-right: 26px solid transparent;
+}
+.boxBuku .menutamb .starrec{
+     width: 0;
+      height: 0;
+      border-bottom: 26px solid green;
+      border-left: 26px solid transparent;
+}
+.boxBuku .menutamb .txt2{
+    padding: 3px;
+    width: 135px;
+    height: 20px;
+    background: green;
+}
+.boxBuku .menutamb .endrec{
+     width: 0;
+      height: 0;
+      border-top: 26px solid green;
+      border-right: 26px solid transparent;
+}
+
+.tbvBuku .boxBuku .option{
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+.tbvBuku .boxBuku span{
+    color: #03a9f4;
+}
+
+
+
+
+.formadd {
+    width: 40%;
+    padding: 30px;
+    margin: 30px auto;
+    background: #131419;
+    text-align: center;
+    box-shadow: -5px -5px 10px rgba(255,255,255,0.05),
+                5px 5px 15px rgba(0,0,0,0.5);
+}
+.formadd .inputadd .gbr{
+    width: 140px;
+    cursor: pointer;
+    text-align: center;
+    color: #43BD05;
+    background: white;
+    padding: 10px;
+    height: 20px;
+    font-weight: bold;
+    margin: auto 40px;
+    box-shadow: -5px -5px 10px black,
+                15px 15px 15px black;
+}
+.formadd #imgPreview div{
+    height: 150px;
+}
+.formadd #imgPreview img{
+    margin-top: 60px;
+}
+.formadd .inputadd .gbr:hover{
+    width: 140px;
+    cursor: pointer;
+    text-align: center;
+    color: #43BD05;
+    background: black;
+    transition: .2s;
+    padding: 10px;
+    height: 20px;
+    font-weight: bold;
+    margin: auto 40px;
+    box-shadow: -5px -5px 10px rgba(255,255,255,0.05),
+                5px 5px 15px rgba(0,0,0,0.5);
+}
+.formadd .addkanan .inpt input{
+    width: 200px;
+    height: 35px;
+    background: #131419;
+    border:none;
+    color: #03a9f4;
+    outline: none;
+    border-radius: 40px;
+    padding: 1px 15px;
+    font-size: 18px;
+    color: #03a9f4;
+    box-shadow: inset -2px -2px 6px rgba(255,255,255,0.1),
+                inset 2px 2px 6px rgba(0,0,0,0.8);
+}
+.formadd .addkanan .inpt textarea{
+    width: 200px;
+    max-width: 200px;
+    height: 85px;
+    background: #131419;
+    border:none;
+    color: #03a9f4;
+    outline: none;
+    border-radius: 10px;
+    padding: 1px 15px;
+    font-size: 18px;
+    color: #03a9f4;
+    box-shadow: inset -2px -2px 6px rgba(255,255,255,0.1),
+                inset 2px 2px 6px rgba(0,0,0,0.8);
+}
+.formadd .submitadd{
+    height: 40px;
+    font-size: 18px;
+    color: #03a9f4;
+    background: #131419;
+    outline: none;
+    border: none;
+    text-transform: uppercase;
+    border-radius: 40px;
+    width: 330px;
+    margin-top: 30px;
+    box-shadow: -2px -2px 6px rgba(255,255,255,0.1),
+                2px 2px 6px rgba(0,0,0,0.8);
+    cursor: pointer;
+}
+.formadd #sampulBuku{
+    display: none;
+}
+.formadd .inputadd{
+    width: 100%;
+    display: flex;
+}
+.formadd h1{
+    color:#43BD05;
+}
+
+.page .linkpage .sm:flex-1{
+    display: flex;
 }

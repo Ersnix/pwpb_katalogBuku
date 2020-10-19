@@ -3,6 +3,7 @@
  
 	use Illuminate\Http\Request;
 	use Illuminate\Support\Facades\DB;
+	use Illuminate\Support\Facades\File; 
 	
 
 	class PemilikController extends Controller
@@ -10,12 +11,16 @@
 		public function index()
 		{
 			$userpemilik = session()->get('id_pemilik');
-			$buku = DB::table('buku')->select('*')->where('id_pemilikToko',$userpemilik)->get();
+			$buku = DB::table('buku')->select('*')->where('id_pemilikToko',$userpemilik)->paginate(4);
 			return view('pemilik',['buku' => $buku]);
 		}
 
 		public function delete($id){
 			DB::table('buku')->where('kode_buku',$id)->delete();
+			$namaGbr = DB::table('buku')->where('kode_buku',$id)->value('gambar_sampul');
+			$path = public_path()."/sampul_buku/".$namaGbr;
+			unlink($path);
+			
 			return redirect('/pemilik');
 		}
 		public function tambah(){
@@ -43,6 +48,7 @@
 				'nama_buku' => $Request->namaBuku,
 				'harga_buku' => $Request->hargaBuku,
 				'jumlah_stok' => $Request->jumlahBuku,
+				'deskripsi_buku' => $Request->deskripsi,
 				'id_pemilikToko' => $userpemilik
 			]);
 			$tujuan_upload = 'sampul_buku';
@@ -54,17 +60,23 @@
 			return view('editBuku',['buku' => $buku]);
 		}
 		public function prosesEditBuku(Request $request){
-			$file = $request->file('sampulBuku');
-			$extention = $file->getClientOriginalExtension();
-			$tujuan_upload = 'sampul_buku';
-			$file->move($tujuan_upload,$request->kodeBuku.".".$extention);
-
-			DB::table('buku')->where('kode_buku',$request->kodeBuku)->update([
-				'nama_buku' => $request->namaBuku,
-				'harga_buku' => $request->hargaBuku,
-				'jumlah_stok' => $request->jumlahBuku,
-				'gambar_sampul' => $request->kodeBuku.".".$extention
-			]);
+			if ($request->file('sampulBuku') != null) {
+				$file = $request->file('sampulBuku');
+				$extention = $file->getClientOriginalExtension();
+				$tujuan_upload = 'sampul_buku';
+				$file->move($tujuan_upload,$request->kodeBuku.".".$extention);
+				DB::table('buku')->where('kode_buku',$request->kodeBuku)->update([
+					'gambar_sampul' => $request->kodeBuku.".".$extention
+				]);
+			}else{
+				DB::table('buku')->where('kode_buku',$request->kodeBuku)->update([
+					'nama_buku' => $request->namaBuku,
+					'harga_buku' => $request->hargaBuku,
+					'jumlah_stok' => $request->jumlahBuku,
+					'deskripsi_buku' => $request->deskripsi
+				]);
+			}
+			
 			return redirect('/pemilik');
 		}
 	}
